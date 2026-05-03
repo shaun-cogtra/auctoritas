@@ -1,0 +1,72 @@
+<svg xmlns="http://www.svg.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#f1f5f9" />
+  <circle cx="600" cy="150" r="40" fill="#e2e8f0" />
+  <circle cx="150" cy="400" r="60" fill="#e2e8f0" />
+  <circle cx="200" cy="150" r="30" fill="#cbd5e1" opacity="0.5" />
+  
+  <!-- Desk -->
+  <path d="M150 450 L650 450 L700 600 L100 600 Z" fill="#334155" />
+  <rect x="250" y="450" width="300" height="20" fill="#1e293b" />
+  
+  <!-- Laptop -->
+  <path d="M300 320 L500 320 L520 450 L280 450 Z" fill="#e2e8f0" />
+  <path d="M290 330 L510 330 L530 450 L270 450 Z" fill="#94a3b8" />
+  <path d="M310 340 L490 340 L500 440 L300 440 Z" fill="#0f172a" />
+  <!-- Screen content -->
+  <rect x="330" y="360" width="140" height="10" fill="#3b82f6" rx="5" />
+  <rect x="330" y="380" width="100" height="8" fill="#475569" rx="4" />
+  <rect x="330" y="400" width="120" height="8" fill="#475569" rx="4" />
+  <circle cx="400" cy="425" r="5" fill="#10b981" />
+  
+  <!-- Person Base -->
+  <path d="M330 450 C330 380, 470 380, 470 450 Z" fill="#3b82f6" />
+  <path d="M350 450 C350 390, 450 390, 450 450 Z" fill="#2563eb" />
+  
+  <!-- Neck & Head -->
+  <rect x="385" y="260" width="30" height="40" fill="#fcd34d" />
+  <circle cx="400" cy="240" r="45" fill="#fcd34d" />
+  
+  <!-- Hair -->
+  <path d="M350 240 C350 180, 450 180, 450 240 C440 200, 360 200, 350 240 Z" fill="#0f172a" />
+  <path d="M420 200 C440 220, 450 240, 450 250 L440 230 Z" fill="#0f172a" />
+  
+  <!-- Face Details -->
+  <circle cx="385" cy="235" r="4" fill="#0f172a" />
+  <circle cx="415" cy="235" r="4" fill="#0f172a" />
+  <path d="M390 255 Q400 265 410 255" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round" />
+  <path d="M380 225 Q385 220 390 225" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" />
+  <path d="M410 225 Q415 220 420 225" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Headset -->
+  <path d="M355 240 A 45 45 0 0 1 445 240" fill="none" stroke="#1e293b" stroke-width="6" />
+  <rect x="345" y="230" width="15" height="35" rx="5" fill="#1e293b" />
+  <rect x="440" y="230" width="15" height="35" rx="5" fill="#1e293b" />
+  
+  <!-- Microphone -->
+  <path d="M355 260 L380 270" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  <circle cx="380" cy="270" r="6" fill="#1e293b" />
+  
+  <!-- Chat Bubbles -->
+  <!-- Left Bubble -->
+  <path d="M180 200 C180 160, 260 160, 260 200 C260 240, 180 240, 180 200 Z" fill="#3b82f6" />
+  <path d="M190 230 L220 240 L210 210 Z" fill="#3b82f6" />
+  <circle cx="205" cy="200" r="4" fill="white" />
+  <circle cx="220" cy="200" r="4" fill="white" />
+  <circle cx="235" cy="200" r="4" fill="white" />
+  
+  <!-- Right Bubble -->
+  <path d="M540 180 C540 140, 620 140, 620 180 C620 220, 540 220, 540 180 Z" fill="#f59e0b" />
+  <path d="M600 210 L590 240 L570 215 Z" fill="#f59e0b" />
+  <rect x="560" y="170" width="40" height="4" fill="white" rx="2" />
+  <rect x="560" y="180" width="30" height="4" fill="white" rx="2" />
+  
+  <!-- Question Marks -->
+  <text x="500" y="120" font-family="Arial" font-size="48" font-weight="bold" fill="#3b82f6" opacity="0.6">?</text>
+  <text x="250" y="120" font-family="Arial" font-size="36" font-weight="bold" fill="#f59e0b" opacity="0.6">?</text>
+  <text x="650" y="320" font-family="Arial" font-size="56" font-weight="bold" fill="#10b981" opacity="0.6">?</text>
+  
+  <!-- Hands on Keyboard -->
+  <circle cx="350" cy="445" r="15" fill="#fcd34d" />
+  <circle cx="450" cy="445" r="15" fill="#fcd34d" />
+</svg>
