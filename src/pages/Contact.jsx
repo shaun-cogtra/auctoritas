@@ -1,7 +1,47 @@
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
+import { submitContact } from '../api'
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState({ type: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setStatus({ type: '', message: '' })
+
+    try {
+      const nameParts = formData.name.trim().split(' ')
+      const firstName = nameParts[0] || ''
+      const lastName = nameParts.slice(1).join(' ') || ''
+
+      const response = await submitContact({
+        firstName,
+        lastName,
+        email: formData.email,
+        message: formData.message
+      })
+
+      if (response && response.success) {
+        setStatus({ type: 'success', message: 'Thank you! We will reach out to you soon.' })
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        setStatus({ type: 'error', message: response?.error || 'Failed to send message. Please try again.' })
+      }
+    } catch (err) {
+      setStatus({ type: 'error', message: 'An unexpected error occurred. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <PageTransition>
       <main style={{ paddingTop: '80px' }}>
@@ -128,20 +168,35 @@ export default function Contact() {
           
           <div className="card">
             <h3 style={{ marginBottom: '1.5rem' }}>Send a Message</h3>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            
+            {status.message && (
+              <div style={{ padding: '1rem', marginBottom: '1.5rem', borderRadius: 'var(--radius-sm)', display: 'flex', gap: '0.75rem', alignItems: 'flex-start', backgroundColor: status.type === 'success' ? '#ecfdf5' : '#fef2f2', color: status.type === 'success' ? '#065f46' : '#991b1b', border: `1px solid ${status.type === 'success' ? '#a7f3d0' : '#fecaca'}` }}>
+                {status.type === 'success' ? <CheckCircle size={20} style={{ flexShrink: 0 }} /> : <AlertCircle size={20} style={{ flexShrink: 0 }} />}
+                <p style={{ margin: 0, fontSize: '0.95rem', color: 'inherit' }}>{status.message}</p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Name</label>
-                <input type="text" style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none' }} placeholder="John Doe" />
+                <input required type="text" name="name" value={formData.name} onChange={handleChange} disabled={isSubmitting} style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none', backgroundColor: isSubmitting ? '#f8fafc' : 'white' }} placeholder="John Doe" />
               </div>
               <div>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Email</label>
-                <input type="email" style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none' }} placeholder="john@company.com" />
+                <input required type="email" name="email" value={formData.email} onChange={handleChange} disabled={isSubmitting} style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none', backgroundColor: isSubmitting ? '#f8fafc' : 'white' }} placeholder="john@company.com" />
               </div>
               <div>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Message</label>
-                <textarea rows="4" style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none', resize: 'vertical' }} placeholder="How can we help you?"></textarea>
+                <textarea required rows="4" name="message" value={formData.message} onChange={handleChange} disabled={isSubmitting} style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none', resize: 'vertical', backgroundColor: isSubmitting ? '#f8fafc' : 'white' }} placeholder="How can we help you?"></textarea>
               </div>
-              <button type="button" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
+              <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ width: '100%', opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
+                {isSubmitting ? (
+                  <>
+                    <style>{`@keyframes spin { 100% { transform: rotate(360deg); } }`}</style>
+                    <Loader2 size={20} style={{ animation: 'spin 1s linear infinite' }} /> Sending...
+                  </>
+                ) : 'Send Message'}
+              </button>
             </form>
           </div>
         </div>
