@@ -1,28 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #0082c8; /* Vibrant Blue */
+  --primary: #0082c8;
+  /* Vibrant Blue */
   --primary-hover: #0070ad;
-  --secondary: #1e293b; /* Dark Navy */
+  --secondary: #1e293b;
+  /* Dark Navy */
   --accent: #3b82f6;
-  
+
   --bg-color: #ffffff;
-  --bg-secondary: #f8fafc; /* Very light slate */
+  --bg-secondary: #f8fafc;
+  /* Very light slate */
   --card-bg: #ffffff;
-  
-  --text-main: #0f172a; /* Slate 900 */
-  --text-muted: #475569; /* Slate 600 */
+
+  --text-main: #0f172a;
+  /* Slate 900 */
+  --text-muted: #475569;
+  /* Slate 600 */
   --border: #e2e8f0;
-  
+
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 8px;
-  
+
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-glow: 0 0 30px rgba(0, 130, 200, 0.2);
-  
+
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -42,8 +47,8 @@ html {
 body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  background-color: #f8fafc; 
-  background-image: 
+  background-color: #f8fafc;
+  background-image:
     radial-gradient(rgba(0, 130, 200, 0.1) 1.5px, transparent 1.5px),
     radial-gradient(circle at 10% 0%, rgba(30, 41, 59, 0.03), transparent 40%),
     radial-gradient(circle at 90% 20%, rgba(0, 130, 200, 0.04), transparent 40%),
@@ -54,7 +59,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -155,7 +165,7 @@ section {
   background-color: #ffffff;
   border: 1px solid #cbd5e1;
   color: var(--text-main);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .btn-secondary:hover {
@@ -187,7 +197,7 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .card::before {
@@ -220,7 +230,8 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(30, 41, 59, 0.95); /* Dark Navy */
+  background: rgba(30, 41, 59, 0.95);
+  /* Dark Navy */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 1000;
@@ -249,7 +260,8 @@ section {
   transition: var(--transition);
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: #ffffff;
 }
 
@@ -317,7 +329,8 @@ section {
 
 /* Footer */
 .footer {
-  background: var(--secondary); /* Dark Navy */
+  background: var(--secondary);
+  /* Dark Navy */
   padding: 5rem 0 3rem;
   color: #ffffff;
 }
@@ -368,8 +381,15 @@ section {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -381,11 +401,11 @@ section {
   .nav-links {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: block;
   }
-  
+
   .mobile-menu {
     display: flex;
     flex-direction: column;
@@ -403,25 +423,27 @@ section {
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
   }
-  
+
   .mobile-menu.open {
     transform: translateX(0);
   }
-  
+
   .mobile-menu .nav-link {
     font-size: 1.5rem;
     font-weight: 600;
   }
 
-  .grid-2, .grid-3, .grid-4 {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
     grid-template-columns: 1fr;
   }
-  
+
   .hero {
     padding-top: 120px;
     padding-bottom: 3rem;
   }
-  
+
   .hero-actions {
     flex-direction: column;
     width: 100%;
@@ -430,7 +452,7 @@ section {
   .btn {
     width: 100%;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -446,7 +468,9 @@ section {
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
-  .grid-3, .grid-4 {
+
+  .grid-3,
+  .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 export default function Navbar() {
   const location = useLocation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  
+
   const isActive = (path) => location.pathname === path ? 'active' : ''
   const closeMenu = () => setIsMobileMenuOpen(false)
 
@@ -13,11 +13,9 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container nav-container">
         <Link to="/" onClick={closeMenu} className="brand" aria-label="Auctoritas home" style={{ display: 'flex', alignItems: 'center', gap: '1rem', zIndex: 1001 }}>
-          <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.15)', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 4px rgba(255, 255, 255, 0.05)' }}>
-            <img src="/logo.png" alt="Auctoritas Logo" style={{ width: '80%', height: '80%', objectFit: 'contain' }} />
-          </div>
+          <img src="/logo.png" alt="Auctoritas Logo" style={{ height: '40px', objectFit: 'contain' }} />
         </Link>
-        
+
         {/* Desktop Nav */}
         <nav className="nav-links">
           <Link to="/" className={`nav-link ${isActive('/')}`}>Home</Link>

@@ -142,7 +142,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ marginBottom: '0.25rem' }}>Email Us</h4>
-                  <p style={{ fontSize: '1rem' }}>hello@auctoritas.com</p>
+                  <p style={{ fontSize: '1rem' }}>shaun@Auctoritas.com.au</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -151,18 +151,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ marginBottom: '0.25rem' }}>Call Us</h4>
-                  <p style={{ fontSize: '1rem' }}>+1 (555) 123-4567</p>
+                  <p style={{ fontSize: '1rem' }}>0481 776 855</p>
                 </div>
               </div>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ padding: '1rem', backgroundColor: 'var(--bg-color)', borderRadius: '50%', boxShadow: 'var(--shadow-sm)' }}>
-                  <MapPin color="var(--primary)" />
-                </div>
-                <div>
-                  <h4 style={{ marginBottom: '0.25rem' }}>Office</h4>
-                  <p style={{ fontSize: '1rem' }}>100 Innovation Drive, Suite 300<br/>San Francisco, CA 94105</p>
-                </div>
-              </div>
+
             </div>
           </div>
           
@@ -183,7 +175,7 @@ export default function Contact() {
               </div>
               <div>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Email</label>
-                <input required type="email" name="email" value={formData.email} onChange={handleChange} disabled={isSubmitting} style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none', backgroundColor: isSubmitting ? '#f8fafc' : 'white' }} placeholder="john@company.com" />
+                <input required type="email" name="email" value={formData.email} onChange={handleChange} disabled={isSubmitting} style={{ width: '100%', padding: '0.875rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none', backgroundColor: isSubmitting ? '#f8fafc' : 'white' }} placeholder="shaun@Auctoritas.com.au" />
               </div>
               <div>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Message</label>

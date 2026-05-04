@@ -13,7 +13,7 @@ export default function Compliance() {
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--primary)' }}></span>
               Compliance & Training
             </div>
-            <h1 style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>Turn Training Into On-Demand Support</h1>
+            <h1 style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>Turn Training Into On Demand Support</h1>
             <p style={{ fontSize: '1.125rem', marginBottom: '2rem' }}>Training often ends at delivery. Auctoritas connects policy interpretation, agreement logic, and ongoing learning to reinforce correct action inside the workday.</p>
             <Link to="/contact" className="btn btn-primary">See How It Works <ArrowRight size={18} /></Link>
           </div>
