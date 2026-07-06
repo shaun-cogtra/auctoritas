@@ -24,9 +24,11 @@ export default function Contact() {
       const lastName = nameParts.slice(1).join(' ') || ''
 
       const response = await submitContact({
-        firstName,
-        lastName,
+        first_name: firstName,
+        last_name: lastName,
         email: formData.email,
+        phone: '',
+        subject: 'Contact Form Submission',
         message: formData.message
       })
 
